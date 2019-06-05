@@ -77,7 +77,7 @@ graphExample.nodeList.map(function(singleNode){
 graphExample.adjacencyList[visitedNode].map(function(singleNode){
 //mark them true and then use recursion to get all neighbors of visited neighbors
 if(visitedArray[singleNode].visited !== true){
-    dfsUtils(singleNode);
+    DFSUtils(singleNode);
     }
 })
       
