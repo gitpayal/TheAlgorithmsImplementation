@@ -20,7 +20,8 @@ class Graph {
 }
 
 let graphExample = new Graph();
-
+//Graph emample taken from
+//https://medium.com/@adriennetjohnson/a-walkthrough-of-dijkstras-algorithm-in-javascript-e94b74192026
 graphExample.addNode("Fullstack");
 graphExample.addNode("Starbucks");
 graphExample.addNode("Dig Inn");
@@ -56,7 +57,6 @@ graphExample.addEdge("Dig Inn", "Cafe Grumpy", 9);
 
 let startingNode = "Cafe Grumpy";
 
-let Graph = 
 
 // 2.Create a visited Array
 let visitedArray =[];
@@ -72,7 +72,7 @@ let visitedArray =[];
  var q = new Queue(); 
  
  //5. Add starting node in visited Array
- visitedArray.push(startingNode)
+ visitedArray[startingNode].visited = true;
  
  //6. push it inside queue
  
@@ -82,11 +82,12 @@ q.enqueue(startingNode)
  
  let currentNode =  q.dequeue(startingNode);
  graphExample.adjacencyList.map(function(neighborNode){
- q.enqueue(neighborNode);
- 
+      visitedArray[startingNode].visited = true;
+      q.enqueue(neighborNode);
+     
  })
  
- }
+ console.log("visited array is our BFS",visitedArray)
  
  
  
